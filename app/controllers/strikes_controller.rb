@@ -2,7 +2,6 @@ class StrikesController < ApplicationController
   # index
   def index
     @strikes = Strike.all
-    @country = strike.find(params[:id]).country
   end
 
   # new
