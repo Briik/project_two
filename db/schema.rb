@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20151116150506) do
   create_table "strikes", force: :cascade do |t|
     t.integer  "country_id"
     t.integer  "target_id"
-    t.string   "type"
+    t.boolean  "airstrike"
     t.string   "date"
     t.integer  "time"
     t.string   "area"

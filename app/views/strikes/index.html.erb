@@ -1,0 +1,14 @@
+<h2>Strikes</h2>
+<h3>Strike list is user generated and is not guaranteed to be accurate or unbiased </h3>
+
+<ul>
+  <% @strikes.each do |strike| %>
+    <li>
+        On <%= strike.date %><br>
+      <%= strike.country.name %> struck <%= strike.target.name %><br>
+      <% if strike.airstrike %>
+      <%= "Airstrike on #{strike.area} at #{strike.time}"%>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

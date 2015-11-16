@@ -30,15 +30,71 @@ countries = Country.create([
     ])
 targets = Target.create([
     # Allied with Bashar al-Assad:
-    {name: "Ba'ath Brigades"}, {name: "Syrian Social Nationalist Party"}, {name: "Arab Nationalist Party"}, {name: "Syrian Resistance"}, {name: "Arab Democratic Party"}, {name: "Jaysh al-Muwahhideen"}, {name: "Forces of Abu Ibrahim"}, {name: "Sootoro"}, {name: "PFLP-GC"}, {name: "Liwa Al-Quds"}, {name: "Palestine Liberation Army"}, {name: "Liwa Abu al-Fadhal al-Abbas"}, {name: "Liw Fatemiyoun"}, {name: "Faylak Wa'ad al-Sadiq"}, {name: "Fatah al-Intifada"}, {name: "Popular Mobilizatoin Forces (of Iraq)"}, {name: "DHKP-C"}, {name: "Houthis"}, {name: "Jaysh al-Wafaa"}, {name: "Liwa Dhu al-Fiqar"}, {name: "Dareh al-Sahel"}, {name: "Dareh al-Areen"}, {name: "Al-Hosn"}, {name: "Dareh al-Watan"}, {name: "al-Berri clan"}, {name: "Tayy tribe militias"}, {name: "al-Jihesh tribe militias"}, {name: "Maghawir Forces"}, {name: "Far Right Volunteers"}, {name: "Popular Committees"}, {name: "Slovonic Corps"}, {name: "Hezbollah"},
+    {name: "Ba'ath Brigades"},
+    {name: "Syrian Social Nationalist Party"},
+    {name: "Arab Nationalist Party"},
+    {name: "Syrian Resistance"},
+    {name: "Arab Democratic Party"},
+    {name: "Jaysh al-Muwahhideen"},
+    {name: "Forces of Abu Ibrahim"},
+    {name: "Sootoro"},
+    {name: "PFLP-GC"},
+    {name: "Liwa Al-Quds"},
+    {name: "Palestine Liberation Army"},
+    {name: "Liwa Abu al-Fadhal al-Abbas"},
+    {name: "Liw Fatemiyoun"},
+    {name: "Faylak Wa'ad al-Sadiq"},
+    {name: "Fatah al-Intifada"},
+    {name: "Popular Mobilizatoin Forces (of Iraq)"},
+    {name: "DHKP-C"},
+    {name: "Houthis"},
+    {name: "Jaysh al-Wafaa"},
+    {name: "Liwa Dhu al-Fiqar"},
+    {name: "Dareh al-Sahel"},
+    {name: "Dareh al-Areen"},
+    {name: "Al-Hosn"},
+    {name: "Dareh al-Watan"},
+    {name: "al-Berri clan"},
+    {name: "Tayy tribe militias"},
+    {name: "al-Jihesh tribe militias"},
+    {name: "Maghawir Forces"},
+    {name: "Far Right Volunteers"},
+    {name: "Popular Committees"},
+    {name: "Slovonic Corps"},
+    {name: "Hezbollah"},
     # Syrian Opposition / al-Qaeda
-    {name: "Free Syrian Army"}, {name: "Islamic Front"}, {name: "Army of Mujahedeen"}, {name: "Jaish al-Sham"}, {name: "Authenticity and Development Front"}, {name: "Harakat Nour al-Din al-Zenki"}, {name: "Fastaqim Kama Umirt"}, {name: "Ajnad al-Sham Islamic Union"}, {name: "Sham Legion"}, {name: "Jabhad Ansar al-Islam"},
+    {name: "Free Syrian Army"},
+    {name: "Islamic Front"},
+    {name: "Army of Mujahedeen"},
+    {name: "Jaish al-Sham"},
+    {name: "Authenticity and Development Front"},
+    {name: "Harakat Nour al-Din al-Zenki"},
+    {name: "Fastaqim Kama Umirt"},
+    {name: "Ajnad al-Sham Islamic Union"},
+    {name: "Sham Legion"},
+    {name: "Jabhad Ansar al-Islam"},
     # Kurds
-    {name: "People's Protection Units"}, {name: "Asayish"}, {name: "Self-Defense Forces (HXP)"}, {name: "Syriac Military Council (MFS)"}, {name: "Sutoro"}, {name: "Kurdisan Workers' Party"}, {name: "Al-Sanadid Forces"}, {name: "International Freedom Battalion"}, {name: "TKP-Kivilcim"}, {name: "Yekiti Party"}, {name: "Sharabiyya tribe"}, {name: "Zubayd tribe militias"}, {name: "Kabour Guards"}, {name: "Sinjar Resistance Units"}, {name: "Peshmerga (Iraqi Kurdistan)"},
+    {name: "People's Protection Units"},
+    {name: "Asayish"},
+    {name: "Self-Defense Forces (HXP)"},
+    {name: "Syriac Military Council (MFS)"},
+    {name: "Sutoro"},
+    {name: "Kurdisan Workers' Party"},
+    {name: "Al-Sanadid Forces"},
+    {name: "International Freedom Battalion"},
+    {name: "TKP-Kivilcim"},
+    {name: "Yekiti Party"},
+    {name: "Sharabiyya tribe"},
+    {name: "Zubayd tribe militias"},
+    {name: "Kabour Guards"},
+    {name: "Sinjar Resistance Units"},
+    {name: "Peshmerga (Iraqi Kurdistan)"},
     # ISIL / ISIS
-    {name: "ISIL"}, {name: "Yarmouk Martyrs Brigade"}, {name: "Jaysh al-Jihad"} ])
+    {name: "ISIL"},
+    {name: "Yarmouk Martyrs Brigade"},
+    {name: "Jaysh al-Jihad"} ])
 strikes = Strike.create([
-    {}, {}
+    {country_id: 2, target_id: 61, airstrike: true, date: "November 15, 2015", time: "Night", area: "Raqqa"}
     ])
 relations = Relation.create([
     {}
