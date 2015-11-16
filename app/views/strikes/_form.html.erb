@@ -1,8 +1,8 @@
-<h2>Edit Strike</h2>
-
-<form action="/countries/<%= @strike.country_id %>/strikes/<%= @strike.id %>" method="post">
-  <input type="hidden" name="_method" value="put">
+<form action="/countries/<%= params[:country_id] %>/strikes" method="post">
+  <input type="hidden" name="_method" value="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <h2>You are registering an attack by the following country:  <%= Country.find(params[:country_id]).name %>.</h2>
 
   <label for="strike[target_id]">Target_id:</label>
   <input name="strike[target_id]" value="<%= @strike.target_id %>">
@@ -20,9 +20,4 @@
   <input name="strike[area]" value="<%= @strike.area %>">
 
   <input type="submit" value="Create">
-</form>
-
-<form action="/countries/<%= @strike.country_id %>/strikes/<%= @strike.id %>" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <input class="button-delete" type="submit" value="Delete!">
 </form>

@@ -1,11 +1,13 @@
 class StrikesController < ApplicationController
   # index
   def index
-    @strikes = Strike.all
+      @country = Country.find(params[:country_id])
+    @strikes = Strike.where("country_id = #{params[:country_id]}")
   end
 
   # new
   def new
+      @countries = Country.all
     @country = Country.find(params[:country_id])
     @strike = Strike.new
   end
@@ -13,7 +15,7 @@ class StrikesController < ApplicationController
   # create
   def create
     @country = Country.find(params[:country_id])
-    @strike = Strike.create!(strike_params.merge(country: @country))
+    @strike = Strike.create!(strikes_params.merge(country: @country))
     redirect_to country_strike_path(@country, @strike)
   end
 
@@ -31,7 +33,7 @@ class StrikesController < ApplicationController
   def update
     @strike = Strike.find(params[:id])
     @country = Country.find(params[:country_id])
-    @strike.update(strike_params.merge(country: @country))
+    @strike.update(strikes_params.merge(country: @country))
     redirect_to country_strike_path(@strike.country, @strike)
   end
 
@@ -44,6 +46,6 @@ class StrikesController < ApplicationController
 
   private
   def strikes_params
-    params.require(:strike).permit(:country_id, :target_id, :type, :date, :time, :area)
+    params.require(:strike).permit(:country_id, :target_id, :airstrike, :date, :time, :area)
   end
 end

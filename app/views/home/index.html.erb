@@ -1,11 +1,11 @@
-<h2>Strikes by Nation // <%= @country.name %></h2>
-
-<%= link_to 'Report a Strike', new_country_strike_path(@country) %>
+<h2>Strikes</h2>
+<h3>Strike list is user generated and is not guaranteed to be accurate or unbiased </h3>
 
 <ul>
   <% @strikes.each do |strike| %>
     <li>
-        On <%= strike.date %>:  Strike against <%= strike.target.name %><br>
+        On <%= strike.date %><br>
+      <%= strike.country.name %> struck <%= strike.target.name %><br>
       <% if strike.airstrike %>
       <%= "Airstrike on #{strike.area} at #{strike.time}"%>
       <p class="edit"><a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit">Is this information inaccurate? Edit this strike.</a></p>
