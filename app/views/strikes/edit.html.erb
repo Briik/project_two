@@ -24,5 +24,6 @@
 
 <form action="/countries/<%= @strike.country_id %>/strikes/<%= @strike.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <input class="button-delete" type="submit" value="Delete!">
 </form>

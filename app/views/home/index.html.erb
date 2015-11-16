@@ -8,11 +8,10 @@
       <%= strike.country.name %> struck <%= strike.target.name %><br>
       <% if strike.airstrike %>
       <%= "Airstrike on #{strike.area} at #{strike.time}"%>
-      <p class="edit"><a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit">Is this information inaccurate? Edit this strike.</a></p>
       <% else %>
       <%= "Assault initiated at #{strike.time}." %><br>
       <p class="edit"><a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit"></a></p>
-      <% end %>
+      <% end %><p class="edit"><a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit">Is this information inaccurate? Edit this strike.</a></p>
     </li>
   <% end %>
 </ul>

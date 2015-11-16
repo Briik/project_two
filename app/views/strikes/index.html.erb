@@ -11,7 +11,7 @@
       <p class="edit"><a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit">Is this information inaccurate? Edit this strike.</a></p>
       <% else %>
       <%= "Assault initiated at #{strike.time}." %><br>
-      <p class="edit"><a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit"></a></p>
+      <p class="edit"><a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit">Is this information inaccurate? Edit this strike.</a></p>
       <% end %>
     </li>
   <% end %>

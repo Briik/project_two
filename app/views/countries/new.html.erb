@@ -1,0 +1,18 @@
+<form action="/countries" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <h2>Add a Nation.</h2>
+  <label for="country[name]">Nation-state:</label>
+  <input name="country[name]" placeholder="Name">
+
+  <label for="country[reason]">This nation's motivation for military action in Syria:</label>
+  <input name="country[reason]"  placeholder="To destroy ISIL.">
+
+  <label for="country[assets]">Breif description of military assets deployed to Syria:</label>
+  <input name="country[assets]" placeholder="Air Power...">
+
+  <label for="country[flag_link]">Image of National Flag:</label>
+  <input name="country[flag_link]" placeholder="https://flagspot.net/images/...">
+
+  <input type="submit" value="Create">
+</form>

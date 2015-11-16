@@ -12,12 +12,12 @@ class CountriesController < ApplicationController
   # create
   def create
     @country = Country.create!(countries_params)
-    redirect_to country_path(@country)
+    redirect_to country_path()
   end
 
   #show
   def show
-    @country = Country.find(params[:country_id])
+    @country = Country.find(params[:id])
   end
 
   # edit
@@ -37,7 +37,7 @@ class CountriesController < ApplicationController
   def destroy
     @country = Country.find(params[:country_id])
     @country.destroy
-    redirect_to countries_path
+    redirect_to countries_path()
   end
 
   private
