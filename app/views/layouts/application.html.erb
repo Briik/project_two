@@ -20,13 +20,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <h1>Syriapp</h1>
-    <h2>Mapping a Proxy War</h2>
-    <%= link_to 'Strikes', '/' %>
-    <%= link_to 'Countries', '/countries' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><%= link_to 'Strikes', '/' %></li>
+            <li role="presentation"><%= link_to 'Countries', '/countries' %></li>
+            <li role="presentation" class="active"><%= notice %></li>
+            <li role="presentation" class="active"><%= alert %></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Syriapp</h3>
+        <h4>Mapping a Proxy War</h4>
+      </div>
 <%= yield %>
+<footer class="footer">
+    <p>© Briik 2015</p>
+</footer>
+</div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
    <!-- Include all compiled plugins (below), or include individual files as needed -->
