@@ -4,8 +4,12 @@
   <input type="hidden" name="_method" value="put">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  <label for="strike[target_id]">Target_id:</label>
-  <input name="strike[target_id]" value="<%= @strike.target_id %>">
+<label for="strike[target_id]">Target:</label>
+<select name="strike[target_id]">
+    <% @targets.each do |target| %>
+    <option value="<%= target.id %>"><%= target.name %></option>
+    <% end %>
+</select>
 
   <label for="strike[airstrike]">Was this an airstrike?(true or false)</label>
   <input name="strike[airstrike]" value="<%= @strike.airstrike %>">
@@ -17,8 +21,11 @@
   <input name="strike[time]" value="<%= @strike.time %>">
 
   <label for="strike[area]">Approximate Location:</label>
-  <input name="strike[area]" value="<%= @strike.area %>">
-
+  <select name="strike[area]">
+    <option value=>
+        <% Region.all.each do |region| %>
+        <option value="<%= region.name %>"><%= region.name %></option>
+        <% end %>
   <input type="submit" value="Create">
 </form>
 

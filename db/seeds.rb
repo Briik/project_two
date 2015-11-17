@@ -11,6 +11,11 @@ Target.destroy_all
 Strike.destroy_all
 Relation.destroy_all
 User.destroy_all
+Region.destroy_all
+
+regions = Region.create([
+    {name: "Kobane"}, {name: "Ar-Raqqah"}, {name: "Aleppo"}, {name: "Al-Hassakah"}, {name: "Idlib"}, {name: "Latakia"}, {name: "Hama"}, {name: "Deir ez-Zor"}, {name: "Tartous"}, {name: "Homs"}, {name: "Tadmur"}, {name: "Damascus"}, {name: "Rif Dimashq"}, {name: "Quneitra"}, {name: "Daraa"}, {name: "As-Suwayda"}
+    ])
 
 countries = Country.create([
     {name: "United States", reason: "To defeat 'ISIL' and prevent terrorist groups from establishing a base from which to attack the US. Also, to protect Iraq from disintigration.", assets: "Air Power, Sea Power, Special Forces, ISR, Monetary and Arms support to allies.", flag_link: "https://flagspot.net/images/u/us.gif"}, {name: "Australia", reason: "To support its allies, and to retaliate for domestic terrorist attacks linked to ISIL", assets: "Air Power", flag_link: ""},
