@@ -12,7 +12,7 @@ class CountriesController < ApplicationController
   # create
   def create
     @country = Country.create!(countries_params)
-    redirect_to country_path()
+    redirect_to countries_path()
   end
 
   #show

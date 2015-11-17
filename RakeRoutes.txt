@@ -16,7 +16,14 @@ cancel_user_registration GET    /users/cancel(.:format)                         
                          PATCH  /users(.:format)                                  devise/registrations#update
                          PUT    /users(.:format)                                  devise/registrations#update
                          DELETE /users(.:format)                                  devise/registrations#destroy
-                    root GET    /                                                 strikes#index
+              home_index GET    /home(.:format)                                   home#index
+                         POST   /home(.:format)                                   home#create
+                new_home GET    /home/new(.:format)                               home#new
+               edit_home GET    /home/:id/edit(.:format)                          home#edit
+                    home GET    /home/:id(.:format)                               home#show
+                         PATCH  /home/:id(.:format)                               home#update
+                         PUT    /home/:id(.:format)                               home#update
+                         DELETE /home/:id(.:format)                               home#destroy
          country_strikes GET    /countries/:country_id/strikes(.:format)          strikes#index
                          POST   /countries/:country_id/strikes(.:format)          strikes#create
       new_country_strike GET    /countries/:country_id/strikes/new(.:format)      strikes#new
@@ -49,3 +56,4 @@ cancel_user_registration GET    /users/cancel(.:format)                         
                          PATCH  /relations/:id(.:format)                          relations#update
                          PUT    /relations/:id(.:format)                          relations#update
                          DELETE /relations/:id(.:format)                          relations#destroy
+                    root GET    /                                                 home#index
