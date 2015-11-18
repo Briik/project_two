@@ -17,6 +17,10 @@
     height: 22px;
     width: 42px;
 }
+.full_flag{
+    max-width: 324;
+    max-height: 216;
+}
 .foot-fixed-bottom {
  bottom: 0;
  display: block;
@@ -43,4 +47,23 @@
  color: rgb(255, 255, 255);
  font-size: 14px;
  margin: 0 12px 15px;
+}
+.chart div {
+  font: 10px sans-serif;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
+#top_stripe{
+    background-color: green;
+}
+#middle_stripe{
+    background-color: white;
+    color: red;
+    border: 2px solid black;
+}
+#bottom_stripe{
+background-color: black;
+color: white;
 }

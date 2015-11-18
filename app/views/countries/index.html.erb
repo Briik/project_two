@@ -1,10 +1,11 @@
-<h2>Nation-states</h2>
-<h3>These are the nations known to be engaged in or directly supporting military activity in Syria.</h3>
+<h2>Nation-States</h2>
+<h4>These are the countries known to be engaged in or directly supporting military activity in Syria.</h4>
 
 <ul>
+    <li class="list-group-item disabled">Country : # Strikes Registered with Syriapp</li>
     <% @countries.each do |country| %>
-    <li>
-        <%= image_tag country.flag_link, alt: "National Flag of #{country.name}", class: "flag" %><%= link_to country.name, "/countries/#{country.id}/strikes" %>
+    <li class="list-group-item">
+        <%= image_tag country.flag_link, alt: "National Flag of #{country.name}", class: "flag" %>&nbsp<%= link_to country.name, "/countries/#{country.id}/strikes" %>&nbsp: <%= country.strikes.all.length %>
     </li>
     <% end %>
 </ul>

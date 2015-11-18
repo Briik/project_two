@@ -1,0 +1,36 @@
+<form action="/countries/<%= @country.id %>" method="post">
+    <input name="_method" type="hidden" value="put">
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+    <h2>Add a Nation.</h2>
+
+    <div class="form-group">
+        <label for="country[name]">Nation-state:</label>
+        <input name="country[name]" value="<%=@country.name%>">
+    </div>
+
+    <div class="form-group">
+        <label for="country[reason]">This nation's motivation for military action in Syria:</label>
+        <input class="form-control" name="country[reason]" value="<%= @country.reason %>" type="text">
+    </div>
+
+    <div class="form-group">
+        <label for="country[assets]">Breif description of military assets deployed to Syria:</label>
+        <input class="form-control" name="country[assets]" value="<%= @country.assets %>" type="text">
+    </div>
+
+    <div class="form-group">
+        <label for="country[flag_link]">Image of National Flag:</label>
+        <input name="country[flag_link]" value="<%= @country.flag_link %>">
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create">
+    </div>
+</form>
+
+<form action="/countries/<%= @country.id %>" method="post">
+    <input name="_method" type="hidden" value="delete">
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+    <input class="button-delete" type="submit" value="Delete!">
+</form>

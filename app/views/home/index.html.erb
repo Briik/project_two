@@ -1,8 +1,24 @@
 <h2>Strikes</h2>
 <h3>Strike list is user generated and is not guaranteed to be accurate or unbiased. </h3>
 
+<div class="chart">
+    <% Country.all.each do |country| %>
+    <% i = 0 %>
+    <% one_third = Country.all.length / 3 %>
+    <% two_thirds = Country.all.length * 2/3 %>
+    <% if country.strikes.length != 0 %>
+    <div style="width:<%= country.strikes.length * 10 %>px;", label="<%= country.name %>", id="<% if i <= one_third %><%='top_stripe'%><% end %><% if i > one_third && i < two_thirds%><%='middle_stripe'%><% end %><% if i >= two_thirds %><%='bottom_stripe'%><% end %>"><%= country.strikes.length %>
+    </div>
+    <% else %>
+    <%= %>
+    <% end %>
+    <% i += 1 %>
+    <% end %>
+</div>
+
 <!-- MAP Section -->
-<div id="syriamap">
+<!-- Abandoned due to lack of visualization capabilities -->
+<!-- <div id="syriamap">
 <%= image_tag("syria.jpeg", :alt => "Map of Syria", :id => "maps-2015-11-18-091516", :width => "600", :height => "547", :orgWidth => "600", :orgHeight => "547", :usemap => "#image-maps-2015-11-18-091516")%>
 
 
@@ -24,7 +40,7 @@
 <area  alt="Quneitra" title="Quneitra"  shape="poly" coords="42,450,31,452,22,458,16,467,14,478,16,489,22,498,31,504,42,506,53,504,62,498,68,489,70,478,68,467,62,458,53,452"  target="_self"     />
 <area  alt="Daraa" title="Daraa"  shape="poly" coords="73,541,70,454,65,436,18,443,14,498"  target="_self"     />
 <area  alt="As-Suwayda" title="As-Suwayda"  shape="poly" coords="158,506,99,453,76,459,76,540,102,547"  target="_self"     />
-</map>
+</map> -->
 
 <!-- List of Strikes -->
 <ul>

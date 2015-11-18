@@ -1,5 +1,5 @@
 <h2>Strikes by Nation //
-    <%= @country.name %></h2>
+    <%= @country.name %></h2><%= image_tag @country.flag_link, alt: "National Flag of #{@country.name}", class: "full_flag" %>
 
 <h4>Why is <%= @country.name %> at war in Syria?</h4>
 <p><%= @country.reason %>
@@ -15,7 +15,7 @@
 <ul>
     <h4><%= "#{@country.name} has attacked the following groups: "%></h4>
 <% @strikes.each do |strike| %>
-<li>
+<li class="list-group-item">
 <%= link_to "#{Target.find(strike.target_id).name}", target_path(strike.target_id) %>
 <% end %>
 </li>

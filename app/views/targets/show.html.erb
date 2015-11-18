@@ -3,10 +3,12 @@
 <h4>Syriapp users have reported <%= @strikes.length %> strikes against this group by the following nations:</h4>
 
 <ul>
+    <li class="list-group-item disabled">Country : # Strikes agianst this group</li>
 <% @strikes.each do |strike| %>
-<li>
+<li class="list-group-item">
 <% @cid = strike.country_id %>
-<%= Country.find(@cid).name %>
+<% @country = Country.find(@cid) %>
+<%= link_to @country.name, country_strikes_path(@country.id) %> : <%= @country.strikes.where(:target_id => @this_target_id).length %>
 <% end %>
 </li>
 </ul>

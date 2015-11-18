@@ -22,15 +22,14 @@ class CountriesController < ApplicationController
 
   # edit
   def edit
-    @country = Country.find(params[:country_id])
+    @country = Country.find(params[:id])
   end
 
   # update
   def update
-    @strike = Strike.find(params[:id])
-    @country = Country.find(params[:country_id])
+    @country = Country.find(params[:id])
     @country.update(countries_params)
-    redirect_to country_path(@country)
+    redirect_to country_strikes_path(@country.id)
   end
 
   # destroy
