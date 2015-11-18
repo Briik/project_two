@@ -1,0 +1,12 @@
+<h3><%= @target.name %></h3>
+
+<h4>Syriapp users have reported <%= @strikes.length %> strikes against this group by the following nations:</h4>
+
+<ul>
+<% @strikes.each do |strike| %>
+<li>
+<% @cid = strike.country_id %>
+<%= Country.find(@cid).name %>
+<% end %>
+</li>
+</ul>

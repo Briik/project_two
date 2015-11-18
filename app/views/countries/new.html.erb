@@ -1,29 +1,29 @@
 <form action="/countries" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-  <h2>Add a Nation.</h2>
+    <h2>Add a Nation.</h2>
 
-   <div class="form-group">
-  <label for="country[name]">Nation-state:</label>
-  <input name="country[name]" placeholder="Name">
-  </div>
+    <div class="form-group">
+        <label for="country[name]">Nation-state:</label>
+        <input name="country[name]" placeholder="Name">
+    </div>
 
- <div class="form-group">
-  <label for="country[reason]">This nation's motivation for military action in Syria:</label>
-  <input type="text" class="form-control" name="country[reason]"  placeholder="To destroy ISIL.">
-  </div>
+    <div class="form-group">
+        <label for="country[reason]">This nation's motivation for military action in Syria:</label>
+        <input class="form-control" name="country[reason]" placeholder="To destroy ISIL." type="text">
+    </div>
 
- <div class="form-group">
-  <label for="country[assets]">Breif description of military assets deployed to Syria:</label>
-  <input type="text" class="form-control" name="country[assets]" placeholder="Air Power...">
-</div>
+    <div class="form-group">
+        <label for="country[assets]">Breif description of military assets deployed to Syria:</label>
+        <input class="form-control" name="country[assets]" placeholder="Air Power..." type="text">
+    </div>
 
- <div class="form-group">
-  <label for="country[flag_link]">Image of National Flag:</label>
-  <input name="country[flag_link]" placeholder="https://flagspot.net/images/...">
-</div>
+    <div class="form-group">
+        <label for="country[flag_link]">Image of National Flag:</label>
+        <input name="country[flag_link]" placeholder="https://flagspot.net/images/...">
+    </div>
 
- <div class="form-group">
-  <input type="submit" value="Create">
-  </div>
+    <div class="form-group">
+        <input type="submit" value="Create">
+    </div>
 </form>

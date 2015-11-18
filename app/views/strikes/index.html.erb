@@ -1,18 +1,45 @@
-<h2>Strikes by Nation // <%= @country.name %></h2>
+<h2>Strikes by Nation //
+    <%= @country.name %></h2>
 
-<%= link_to 'Report a Strike', new_country_strike_path(@country) %>
+<h4>Why is <%= @country.name %> at war in Syria?</h4>
+<p><%= @country.reason %>
+<h4>What assets has <%= @country.name %> brought to bear in this conflict?</h4>
+<p>
+<% if @country.assets == "" %>
+<%= "Unknown." %>
+<% else %>
+<%= @country.assets %>
+<% end %></p>
+
+<h3><%= link_to 'Report a Strike', new_country_strike_path(@country) %></h3>
+<ul>
+    <h4><%= "#{@country.name} has attacked the following groups: "%></h4>
+<% @strikes.each do |strike| %>
+<li>
+<%= link_to "#{Target.find(strike.target_id).name}", target_path(strike.target_id) %>
+<% end %>
+</li>
+</ul>
+
 
 <ul>
-  <% @strikes.each do |strike| %>
+    <h4>Strike List for <%= @country.name %>: </h4>
+    <% @strikes.each do |strike| %>
     <li>
-        On <%= strike.date %>:  Strike against <%= strike.target.name %><br>
-      <% if strike.airstrike %>
-      <%= "Airstrike on #{strike.area} at #{strike.time}"%>
-      <p class="edit"><a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit">Is this information inaccurate? Edit this strike.</a></p>
-      <% else %>
-      <%= "Assault initiated at #{strike.time}." %><br>
-      <p class="edit"><a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit">Is this information inaccurate? Edit this strike.</a></p>
-      <% end %>
+        On
+        <%= strike.date %>: Strike against
+        <%= strike.target.name %><br>
+        <% if strike.airstrike %>
+        <%= "Airstrike on #{strike.area} at #{strike.time}"%>
+        <p class="edit">
+            <a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit">Is this information inaccurate? Edit this strike.</a>
+        </p>
+        <% else %>
+        <%= "Assault initiated at #{strike.time}." %><br>
+        <p class="edit">
+            <a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit">Is this information inaccurate? Edit this strike.</a>
+        </p>
+        <% end %>
     </li>
-  <% end %>
+    <% end %>
 </ul>

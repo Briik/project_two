@@ -2,11 +2,11 @@
 <h3>These are the nations known to be engaged in or directly supporting military activity in Syria.</h3>
 
 <ul>
-  <% @countries.each do |country| %>
+    <% @countries.each do |country| %>
     <li>
-    <%= image_tag country.flag_link, alt: "National Flag of #{country.name}", class: "flag" %><%= link_to country.name, "/countries/#{country.id}/strikes" %>
+        <%= image_tag country.flag_link, alt: "National Flag of #{country.name}", class: "flag" %><%= link_to country.name, "/countries/#{country.id}/strikes" %>
     </li>
-  <% end %>
+    <% end %>
 </ul>
 
 <%= link_to 'Add Nation', new_country_path() %>

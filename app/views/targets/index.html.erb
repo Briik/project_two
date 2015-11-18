@@ -1,0 +1,8 @@
+<h3>Militant Groups in Syria</h3>
+<h4>A list of militant groups operating in Syria</h4>
+<p>Presented without comment</p>
+<ul>
+<% @targets.each do |target| %>
+<li><%= link_to target.name, target_path(target) %></li>
+<% end %>
+</ul>

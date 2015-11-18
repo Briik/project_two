@@ -1,7 +1,7 @@
 class CountriesController < ApplicationController
   # index
   def index
-    @countries = Country.all
+    @countries = Country.all.sort_by{ |m| m.name.downcase }
   end
 
   # new
