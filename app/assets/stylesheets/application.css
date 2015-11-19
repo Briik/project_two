@@ -59,7 +59,7 @@
     background-color: green;
 }
 #middle_stripe{
-    background-color: white;
+    background-color: none;
     color: red;
     border: 2px solid black;
 }

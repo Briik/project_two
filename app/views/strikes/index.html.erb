@@ -14,9 +14,14 @@
 <h3><%= link_to 'Report a Strike', new_country_strike_path(@country) %></h3>
 <ul>
     <h4><%= "#{@country.name} has attacked the following groups: "%></h4>
+<% array = [] %>
 <% @strikes.each do |strike| %>
+<% array << Target.find(strike.target_id).name %>
+<% end %>
+<% array = array.uniq %>
+<% array.each do |array_strike| %>
 <li class="list-group-item">
-<%= link_to "#{Target.find(strike.target_id).name}", target_path(strike.target_id) %>
+<%= link_to "#{array_strike}", target_path(Target.where(name: "#{array_strike}").last.id) %>
 <% end %>
 </li>
 </ul>

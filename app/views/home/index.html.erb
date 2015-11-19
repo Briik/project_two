@@ -2,12 +2,12 @@
 <h3>Strike list is user generated and is not guaranteed to be accurate or unbiased. </h3>
 
 <div class="chart">
+        <% i = 0 %>
     <% Country.all.each do |country| %>
-    <% i = 0 %>
     <% one_third = Country.all.length / 3 %>
-    <% two_thirds = Country.all.length * 2/3 %>
+    <% two_thirds = Country.all.length * 0.66666 %>
     <% if country.strikes.length != 0 %>
-    <div style="width:<%= country.strikes.length * 10 %>px;", label="<%= country.name %>", id="<% if i <= one_third %><%='top_stripe'%><% end %><% if i > one_third && i < two_thirds%><%='middle_stripe'%><% end %><% if i >= two_thirds %><%='bottom_stripe'%><% end %>"><%= country.strikes.length %>
+    <div style="width:<%= country.strikes.length * 10 %>px;", label="<%= country.name %>", id="<% if i <= one_third %><%='top_stripe'%><% end %><% if i > one_third && i < two_thirds %><%='middle_stripe'%><% end %><% if i >= two_thirds %><%='bottom_stripe'%><% end %>"><%= country.strikes.length %>
     </div>
     <% else %>
     <%= %>

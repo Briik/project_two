@@ -13,7 +13,7 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <title>Syriapp: Mapping a Proxy War</title>
+  <title>Syriapp: Tracking a Proxy War</title>
 </head>
 <body>
     <div class="container">
@@ -23,13 +23,14 @@
             <li role="presentation"><%= link_to 'Strikes', '/' %></li>
             <li role="presentation"><%= link_to 'Countries', '/countries' %></li>
             <li role="presentation"><%= link_to 'Militant Groups', '/targets' %></li>
-            <li role="presentation"><%= link_to 'State-Client Relationships', relations_path() %></li>
+            <li role="presentation"><%= link_to 'Country-Militant Group Relationships', relations_path() %></li>
             <li role="presentation" class="active"><%= notice %></li>
             <li role="presentation" class="active"><%= alert %></li>
           </ul>
         </nav>
-        <h3 class="text-muted">Syriapp</h3>
-        <h4>Mapping a Proxy War</h4>
+        <h1 class="text-muted">Syriapp</h1>
+        <h4>Tracking a Proxy War</h4>
+        <HR width=80%>
       </div>
 <%= yield %>
 <footer class="footer" class="foot-fixed-bottom">
