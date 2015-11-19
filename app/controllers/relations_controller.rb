@@ -23,6 +23,7 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
         redirect_to relations_path()
       end
 
+      #do you need a show view? 
       #show
       def show
 
