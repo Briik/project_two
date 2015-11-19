@@ -103,6 +103,27 @@ targets = Target.create([
 strikes = Strike.create([
     {country_id: 4, target_id: 58, airstrike: true, date: "November 15, 2015", time: "22:00", area: "Raqqa"}
     ])
-relations = Relation.create([
-    {country_id: 4, target_id: 58, allies: false, coordination: false, enemies: true}, {country_id: 1, target_id: 58, allies: false, coordination: false, enemies: true}
-    ])
+
+assad = 1
+while assad <= 32 do
+    Relation.create([
+        {country_id: 15, target_id: assad, allies: true, coordination: true, enemies: false}
+        ])
+    assad += 1
+end
+
+turks = 43
+while turks <= 57 do
+    Relation.create([
+        {country_id: 10, target_id: turks, allies: false, coordination: false, enemies: true}
+        ])
+    turks += 1
+end
+
+isil = 1
+while isil <= Country.all.length do
+    Relation.create([
+        {country_id: isil, target_id: 58, allies: false, coordination: false, enemies: true}
+        ])
+    isil += 1
+end
