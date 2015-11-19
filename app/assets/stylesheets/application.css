@@ -67,3 +67,12 @@
 background-color: black;
 color: white;
 }
+.allies, .enemies{
+    padding-left: 5em;
+}
+.allies{
+    color: steelblue;
+}
+.enemies{
+    color: darkred;
+}

@@ -1,2 +1,32 @@
-<h1>Error 404</h1>
-<h2>Additional content en route.</h2>
+<h2>Edit Relationship</h4>
+    <h5>WARNING: You are changing the registered relationship between <%= @country.name %> and <%= @target.name %></h5>
+
+<form action="/relations/<%= @relation.id %>" method="post">
+    <input name="_method" type="hidden" value="put">
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+    <div class="checkbox">
+        <label for="relation[allies]"><input name="relation[allies]" type="checkbox" value="<%= @relation.allies %>">
+            Are they Allies? (Check if yes)</label>
+    </div>
+
+    <div class="checkbox">
+        <label for="relation[coordination]"><input name="relation[coordination]" type="checkbox" value="<%= @relation.coordination %>">
+            Are they coordinating? (Check if yes)</label>
+    </div>
+
+    <div class="checkbox">
+        <label for="relation[enemies]"><input name="relation[enemies]" type="checkbox" value="<%= @relation.enemies %>">
+            Are they Enemies? (Check if these groups are at odds)</label>
+    </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create">
+            </div>
+        </form>
+
+        <form action="/relations/<%= @relation.id %>" method="post">
+            <input name="_method" type="hidden" value="delete">
+            <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+            <input class="button-delete" type="submit" value="Delete!">
+        </form>

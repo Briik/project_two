@@ -1,2 +1,11 @@
-<h1>Error 404</h1>
-<h2>Additional content en route.</h2>
+<h2>Reported relationships between National militaries and militant groups</h2>
+
+<ul class="list-group">
+<% @countries.each do |country| %>
+<li class="list-group-item"><span class="badge"><%= country.relations.length %></span><h5><%= link_to country.name, country_strikes_path(country.id) %></h5></li>
+  <% country.relations.each do |relation| %>
+  <li class="list-group-item disabled">: <%= Target.find(relation.target_id).name %><% if relation.allies %><span class="allies">Allies</span><% end %>&nbsp&nbsp&nbsp&nbsp<% if relation.coordination %><%= "Coordinating Strikes" %><% end %><% if relation.enemies %><span class="enemies">Enemies</span><% end %><span class="pull-right"><%= link_to '[edit]', edit_relation_path(relation.id) %></span></li>
+  <% end %>
+<% end %>
+</ul>
+<%= link_to 'add a relationship', new_relation_path() %>

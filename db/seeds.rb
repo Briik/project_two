@@ -104,5 +104,5 @@ strikes = Strike.create([
     {country_id: 4, target_id: 58, airstrike: true, date: "November 15, 2015", time: "22:00", area: "Raqqa"}
     ])
 relations = Relation.create([
-    {}
+    {country_id: 4, target_id: 58, allies: false, coordination: false, enemies: true}, {country_id: 1, target_id: 58, allies: false, coordination: false, enemies: true}
     ])
