@@ -1,5 +1,10 @@
 == README
 
+Hello user.
+This app is in development and does not have a flushed out README.
+The purpose of this website is to store and organize data regarding airstrikes and nation-state client(militant group) relationships in the ongoing Syrian conflict.
+The data is presented without comment, as this is an exercise in full-stack development and not a political statement.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
