@@ -76,7 +76,7 @@
 <ul>
     <% @relations.each do |relation| %>
     <% if relation.allies == true %>
-    <% target = Country.find(realation.target_id) %>
+    <% target = Country.find(relation.target_id) %>
     <li class"list-group-item"><%= link_to target.name, target_path(target.id) %></li>
     <% end %>
     <% end %>

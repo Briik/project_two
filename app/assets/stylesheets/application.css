@@ -57,6 +57,7 @@
 }
 #top_stripe{
     background-color: green;
+    color: black;
 }
 #middle_stripe{
     background-color: none;
@@ -65,7 +66,7 @@
 }
 #bottom_stripe{
 background-color: black;
-color: white;
+color: red;
 }
 .allies, .enemies, .coordination{
     padding-left: 5em;
