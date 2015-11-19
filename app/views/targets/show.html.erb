@@ -1,50 +1,71 @@
 <h3><%= @target.name %></h3>
 
-<h4>Syriapp users have reported <%= @strikes.length %> strikes against this group by the following nations:</h4>
+<h4>Syriapp users have reported
+    <%= @strikes.length %>
+    strikes against this group by the following nations:</h4>
 
 <ul>
 
-<% array = [] %>
-<% @strikes.each do |strike| %>
-<% cid = strike.country_id %>
-<% array << Country.find(cid).name %>
-<% end %>
+    <% array = [] %>
+    <% @strikes.each do |strike| %>
+    <% cid = strike.country_id %>
+    <% array << Country.find(cid).name %>
+    <% end %>
 
     <li class="list-group-item disabled">Country : # Strikes against this group</li>
-<% array = array.uniq %>
-<% array.each do |array_country_name| %>
-<% country = Country.where(name: "#{array_country_name}").last %>
-<li class="list-group-item">
-<%= link_to "#{array_country_name}", country_strikes_path(country.id) %> : <%= country.strikes.where(:target_id => @this_target_id).length %>
-<% end %>
-</li>
-
-<h4>Allies of <%= @target.name %>:</h4>
-<ul>
-<% @relations.each do |relation| %>
-<% country = Country.find(relation.country_id) %>
-<li class="list-group-item"><%= link_to country.name, country_strikes_path(country.id) %></li>
-<% end %>
-</ul>
-
-<h4>Strike List for <%= @target.name %>:</h4>
-<ul>
-    <% @strikes.each do |strike| %>
-    <li>
-        On
-        <%= strike.date %>: Strike by
-        <%= strike.country.name %><br>
-        <% if strike.airstrike %>
-        <%= "Airstrike on #{strike.area} at #{strike.time}"%>
-        <p class="edit">
-            <a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit"><h6>Is this information inaccurate? Edit this strike.</h6></a>
-        </p>
-        <% else %>
-        <%= "Assault initiated at #{strike.time}." %><br>
-        <p class="edit">
-            <a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit"><h6>Is this information inaccurate? Edit this strike.</h6></a>
-        </p>
+    <% array = array.uniq %>
+    <% array.each do |array_country_name| %>
+    <% country = Country.where(name: "#{array_country_name}").last %>
+    <li class="list-group-item">
+        <%= link_to "#{array_country_name}", country_strikes_path(country.id) %>
+        :
+        <%= country.strikes.where(:target_id => @this_target_id).length %>
         <% end %>
     </li>
-    <% end %>
-</ul>
+
+    <h4>Allies of
+        <%= @target.name %>:</h4>
+    <ul>
+        <% @relations.each do |relation| %>
+        <% country = Country.find(relation.country_id) %>
+        <% if relation.allies == true %>
+        <li class="list-group-item"><%= link_to country.name, country_strikes_path(country.id) %></li><% end %>
+        <% end %>
+    </ul>
+
+    <h4>Enemies of
+        <%= @target.name %></h4>
+    <ul>
+        <% @relations.each do |relation| %>
+        <% country = Country.find(relation.country_id) %>
+        <% if relation.enemies == true %>
+        <li class="list-group-item"><%= link_to country.name, country_strikes_path(country.id) %></li><% end %>
+        <% end %>
+    </ul>
+
+    <h4>Strike List for
+        <%= @target.name %>:</h4>
+    <ul>
+        <% @strikes.each do |strike| %>
+        <li>
+            On
+            <%= strike.date %>: Strike by
+            <%= strike.country.name %><br>
+            <% if strike.airstrike %>
+            <%= "Airstrike on #{strike.area} at #{strike.time}"%>
+            <p class="edit">
+                <a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit">
+                    <h6>Is this information inaccurate? Edit this strike.</h6>
+                </a>
+            </p>
+            <% else %>
+            <%= "Assault initiated at #{strike.time}." %><br>
+            <p class="edit">
+                <a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit">
+                    <h6>Is this information inaccurate? Edit this strike.</h6>
+                </a>
+            </p>
+            <% end %>
+        </li>
+        <% end %>
+    </ul>

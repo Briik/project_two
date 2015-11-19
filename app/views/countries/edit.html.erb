@@ -2,17 +2,18 @@
     <input name="_method" type="hidden" value="put">
     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-    <h3>WARNING: You are editing our records for <%= @country.name %></h3>
+    <h3>WARNING: You are editing our records for
+        <%= @country.name %></h3>
     <h6>Remember to hit enter/return when you are done entering text.</h6>
 
     <div class="form-group">
         <label for="country[reason]">This nation's motivation for military action in Syria:</label>
-        <input class="form-control" name="country[reason]" value="<%= @country.reason %>" type="text">
+        <input class="form-control" name="country[reason]" type="text" value="<%= @country.reason %>">
     </div>
 
     <div class="form-group">
         <label for="country[assets]">Breif description of military assets deployed to Syria:</label>
-        <input class="form-control" name="country[assets]" value="<%= @country.assets %>" type="text">
+        <input class="form-control" name="country[assets]" type="text" value="<%= @country.assets %>">
     </div>
 
     <div class="form-group">

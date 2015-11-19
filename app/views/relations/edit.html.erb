@@ -1,5 +1,8 @@
 <h2>Edit Relationship</h4>
-    <h5>WARNING: You are changing the registered relationship between <%= @country.name %> and <%= @target.name %></h5>
+<h5>WARNING: You are changing the registered relationship between
+    <%= @country.name %>
+    and
+    <%= @target.name %></h5>
 
 <form action="/relations/<%= @relation.id %>" method="post">
     <input name="_method" type="hidden" value="put">
@@ -20,13 +23,13 @@
             Are they Enemies? (Check if these groups are at odds)</label>
     </div>
 
-            <div class="form-group">
-                <input type="submit" value="Create">
-            </div>
-        </form>
+    <div class="form-group">
+        <input type="submit" value="Create">
+    </div>
+</form>
 
-        <form action="/relations/<%= @relation.id %>" method="post">
-            <input name="_method" type="hidden" value="delete">
-            <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
-            <input class="button-delete" type="submit" value="Delete!">
-        </form>
+<form action="/relations/<%= @relation.id %>" method="post">
+    <input name="_method" type="hidden" value="delete">
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+    <input class="button-delete" type="submit" value="Delete!">
+</form>

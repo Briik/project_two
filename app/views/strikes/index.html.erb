@@ -60,13 +60,25 @@
         <% end %>
     </ul>
 
-    <h4>Allies of
+    <h4>Enemies of
         <%= @country.name %>:</h4>
     <ul>
         <% @relations.each do |relation| %>
+        <% if relation.enemies == true %>
         <% target = Target.find(relation.target_id) %>
         <li class="list-group-item"><%= link_to target.name, target_path(target.id) %></li>
         <% end %>
+        <% end %>
     </ul>
+
+    <h4>Allies of
+    <%= @country.name %>:</h4>
+<ul>
+    <% @relations.each do |relation| %>
+    <% if relation.allies == true %>
+    <% target = Country.find(realation.target_id) %>
+    <li class"list-group-item"><%= link_to target.name, target_path(target.id) %></li>
+    <% end %>
+    <% end %>
 
     <h5><%= link_to "Edit Information for Country: #{@country.name}", edit_country_path(@country.id) %></h5>

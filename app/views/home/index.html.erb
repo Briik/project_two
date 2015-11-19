@@ -1,13 +1,15 @@
 <h2>Strikes</h2>
-<h3>Strike list is user generated and is not guaranteed to be accurate or unbiased. </h3>
+<h3>Strike list is user generated and is not guaranteed to be accurate or unbiased.
+</h3>
 
 <div class="chart">
-        <% i = 0 %>
+    <% i = 0 %>
     <% Country.all.each do |country| %>
     <% one_third = Country.all.length / 3 %>
     <% two_thirds = one_third * 2 %>
     <% if country.strikes.length != 0 %>
-    <div style="width:<%= country.strikes.length * 10 %>px;", label="<%= country.name %>", id="<% if i <= one_third %><%='top_stripe'%><% end %><% if i > one_third && i < two_thirds %><%='middle_stripe'%><% end %><% if i >= two_thirds %><%='bottom_stripe'%><% end %>"><%= country.strikes.length %>
+    <div , , id="<% if i <= one_third %><%='top_stripe'%><% end %><% if i > one_third && i < two_thirds %><%='middle_stripe'%><% end %><% if i >= two_thirds %><%='bottom_stripe'%><% end %>" label="<%= country.name %>"
+        style="width:<%= country.strikes.length * 10 %>px;"><%= country.strikes.length %>
     </div>
     <% else %>
     <%= %>
@@ -15,7 +17,7 @@
     <% i += 1 %>
     <% end %>
 </div>
-
+<h5>>>To register a stike with Syriapp, first <%= link_to 'select the nation-state', countries_path() %> that launched the attack.</h5>
 <!-- List of Strikes -->
 <ul>
     <% @strikes.each do |strike| %>
@@ -31,7 +33,9 @@
         <%= "Assault initiated at #{strike.time}." %><br>
         <% end %>
         <p class="edit">
-            <a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit"><h6>Is this information inaccurate? Edit this strike.</h6></a>
+            <a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit">
+                <h6>Is this information inaccurate? Edit this strike.</h6>
+            </a>
         </p>
     </li>
     <% end %>

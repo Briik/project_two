@@ -1,44 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-   <%= stylesheet_link_tag 'css/bootstrap.min.css' %>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <title>Syriapp: Tracking a Proxy War</title>
+    <%= stylesheet_link_tag 'css/bootstrap.min.css' %>
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+            <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+                <%= csrf_meta_tags %>
+                    <title>Syriapp: Tracking a Proxy War</title>
 </head>
+
 <body>
     <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-            <li role="presentation"><%= link_to 'Strikes', '/' %></li>
-            <li role="presentation"><%= link_to 'Countries', '/countries' %></li>
-            <li role="presentation"><%= link_to 'Militant Groups', '/targets' %></li>
-            <li role="presentation"><%= link_to 'Country-Militant Group Relationships', relations_path() %></li>
-            <li role="presentation" class="active"><%= notice %></li>
-            <li role="presentation" class="active"><%= alert %></li>
-          </ul>
-        </nav>
-        <h1 class="text-muted">Syriapp</h1>
-        <h4>Tracking a Proxy War</h4>
-        <HR width=80%>
-      </div>
-<%= yield %>
-<footer class="footer" class="foot-fixed-bottom">
-    <div class="container">
-        <hr />
-    <p>Built with Ruby on Rails, Bootstrap, Postgres, and more. Additional content en route.</p><h6 class="pull-right">© Briik 2015</h6>
-</div>
-</footer>
-</div>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-   <!-- Include all compiled plugins (below), or include individual files as needed -->
-   <%= javascript_include_tag 'js/bootstrap.min.js' %>
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation">
+                        <%= link_to 'Strikes', '/' %>
+                    </li>
+                    <li role="presentation">
+                        <%= link_to 'Countries', '/countries' %>
+                    </li>
+                    <li role="presentation">
+                        <%= link_to 'Militant Groups', '/targets' %>
+                    </li>
+                    <li role="presentation">
+                        <%= link_to 'Country-Militant Group Relationships', relations_path() %>
+                    </li>
+                    <li role="presentation" class="active">
+                        <%= notice %>
+                    </li>
+                    <li role="presentation" class="active">
+                        <%= alert %>
+                    </li>
+                </ul>
+            </nav>
+            <h1 class="text-muted">Syriapp</h1>
+            <h4>Tracking a Proxy War</h4>
+            <HR width=80%>
+        </div>
+        <%= yield %>
+            <footer class="footer" class="foot-fixed-bottom">
+                <div class="container">
+                    <hr />
+                    <p>Built with Ruby on Rails, Bootstrap, Postgres, and more. Additional content en route.</p>
+                    <h6 class="pull-right">© Briik 2015</h6>
+                </div>
+            </footer>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <%= javascript_include_tag 'js/bootstrap.min.js' %>
 </body>
+
 </html>
