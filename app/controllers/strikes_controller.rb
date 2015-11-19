@@ -1,4 +1,5 @@
 class StrikesController < ApplicationController
+    before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   # index
   def index
     @country = Country.find(params[:country_id])

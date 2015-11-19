@@ -1,4 +1,5 @@
 class CountriesController < ApplicationController
+    before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   # index
   def index
     @countries = Country.all.sort_by{ |m| m.name.downcase }

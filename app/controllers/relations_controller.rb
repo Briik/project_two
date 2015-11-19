@@ -1,5 +1,5 @@
 class RelationsController < ApplicationController
-
+before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
       # index
       def index
         @relationships = Relation.all
