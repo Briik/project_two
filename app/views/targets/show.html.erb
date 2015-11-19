@@ -18,11 +18,17 @@
 <%= link_to "#{array_country_name}", country_strikes_path(country.id) %> : <%= country.strikes.where(:target_id => @this_target_id).length %>
 <% end %>
 </li>
+
+<h4>Allies of <%= @target.name %>:</h4>
+<ul>
+<% @relations.each do |relation| %>
+<% country = Country.find(relation.country_id) %>
+<li class="list-group-item"><%= link_to country.name, country_strikes_path(country.id) %></li>
+<% end %>
 </ul>
 
 <h4>Strike List for <%= @target.name %>:</h4>
 <ul>
-    <h4>Strike List for <%= @target.name %>:</h4>
     <% @strikes.each do |strike| %>
     <li>
         On

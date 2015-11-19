@@ -4,7 +4,7 @@
 <% @countries.each do |country| %>
 <li class="list-group-item"><span class="badge"><%= country.relations.length %></span><h5><%= link_to country.name, country_strikes_path(country.id) %></h5></li>
   <% country.relations.each do |relation| %>
-  <li class="list-group-item disabled">: <%= Target.find(relation.target_id).name %><% if relation.allies %><span class="allies">Allies</span><% end %>&nbsp&nbsp&nbsp&nbsp<% if relation.coordination %><%= "Coordinating Strikes" %><% end %><% if relation.enemies %><span class="enemies">Enemies</span><% end %><span class="pull-right"><%= link_to '[edit]', edit_relation_path(relation.id) %></span></li>
+  <li class="list-group-item disabled">: <%= link_to Target.find(relation.target_id).name, target_path(relation.target_id) %><% if relation.allies %><span class="allies">Allies</span><% end %><% if relation.coordination %><span class="coordination"><%= "Coordinating Strikes" %></span><% end %><% if relation.enemies %><span class="enemies">Enemies</span><% end %><span class="pull-right"><%= link_to '[edit]', edit_relation_path(relation.id) %></span></li>
   <% end %>
 <% end %>
 </ul>

@@ -1,51 +1,72 @@
 <h2>Strikes by Nation //
     <%= @country.name %></h2><%= image_tag @country.flag_link, alt: "National Flag of #{@country.name}", class: "full_flag" %>
 
-<h4>Why is <%= @country.name %> at war in Syria?</h4>
+<h4>Why is
+    <%= @country.name %>
+    at war in Syria?</h4>
 <p><%= @country.reason %>
-<h4>What assets has <%= @country.name %> brought to bear in this conflict?</h4>
-<p>
-<% if @country.assets == "" %>
-<%= "Unknown." %>
-<% else %>
-<%= @country.assets %>
-<% end %></p>
-
-<h3><%= link_to 'Report a Strike', new_country_strike_path(@country) %></h3>
-<ul>
-    <h4><%= "#{@country.name} has attacked the following groups: "%></h4>
-<% array = [] %>
-<% @strikes.each do |strike| %>
-<% array << Target.find(strike.target_id).name %>
-<% end %>
-<% array = array.uniq %>
-<% array.each do |array_strike| %>
-<li class="list-group-item">
-<%= link_to "#{array_strike}", target_path(Target.where(name: "#{array_strike}").last.id) %>
-<% end %>
-</li>
-</ul>
-
-
-<ul>
-    <h4>Strike List for <%= @country.name %>: </h4>
-    <% @strikes.each do |strike| %>
-    <li>
-        On
-        <%= strike.date %>: Strike against
-        <%= strike.target.name %><br>
-        <% if strike.airstrike %>
-        <%= "Airstrike on #{strike.area} at #{strike.time}"%>
-        <p class="edit">
-            <a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit"><h6>Is this information inaccurate? Edit this strike.</h6></a>
-        </p>
+    <h4>What assets has
+        <%= @country.name %>
+        brought to bear in this conflict?</h4>
+    <p>
+        <% if @country.assets == "" %>
+        <%= "Unknown." %>
         <% else %>
-        <%= "Assault initiated at #{strike.time}." %><br>
-        <p class="edit">
-            <a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit"><h6>Is this information inaccurate? Edit this strike.</h6></a>
-        </p>
+        <%= @country.assets %>
+        <% end %></p>
+
+    <h3><%= link_to 'Report a Strike', new_country_strike_path(@country) %></h3>
+    <ul>
+        <h4><%= "#{@country.name} has attacked the following groups: "%></h4>
+        <% array = [] %>
+        <% @strikes.each do |strike| %>
+        <% array << Target.find(strike.target_id).name %>
         <% end %>
-    </li>
-    <% end %>
-</ul>
-<h5><%= link_to "Edit Information for Country: #{@country.name}", edit_country_path(@country.id) %></h5>
+        <% array = array.uniq %>
+        <% array.each do |array_strike| %>
+        <li class="list-group-item">
+            <%= link_to "#{array_strike}", target_path(Target.where(name: "#{array_strike}").last.id) %>
+            <% end %>
+        </li>
+    </ul>
+
+    <h4>Strike List for
+        <%= @country.name %>:
+    </h4>
+    <ul>
+        <h5>Responsible for
+            <%= @percent_strikes %>% of Syriapp registered strikes.</h5>
+        <% @strikes.each do |strike| %>
+        <li>
+            On
+            <%= strike.date %>: Strike against
+            <%= strike.target.name %><br>
+            <% if strike.airstrike %>
+            <%= "Airstrike on #{strike.area} at #{strike.time}"%>
+            <p class="edit">
+                <a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit">
+                    <h6>Is this information inaccurate? Edit this strike.</h6>
+                </a>
+            </p>
+            <% else %>
+            <%= "Assault initiated at #{strike.time}." %><br>
+            <p class="edit">
+                <a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit">
+                    <h6>Is this information inaccurate? Edit this strike.</h6>
+                </a>
+            </p>
+            <% end %>
+        </li>
+        <% end %>
+    </ul>
+
+    <h4>Allies of
+        <%= @country.name %>:</h4>
+    <ul>
+        <% @relations.each do |relation| %>
+        <% target = Target.find(relation.target_id) %>
+        <li class="list-group-item"><%= link_to target.name, target_path(target.id) %></li>
+        <% end %>
+    </ul>
+
+    <h5><%= link_to "Edit Information for Country: #{@country.name}", edit_country_path(@country.id) %></h5>

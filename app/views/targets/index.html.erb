@@ -2,8 +2,9 @@
 <h4>A list of militant groups operating in Syria</h4>
 <p>Presented without comment</p>
 <ul>
-    <li class="list-group-item disabled">Group : # Syriapp registered strikes</li>
+    <li class="list-group-item disabled">Group : # Syriapp registered strikes : % of Strikes</li>
 <% @targets.each do |target| %>
-<li class="list-group-item"><%= link_to target.name, target_path(target) %> : <%= Strike.where(:target_id => target.id).all.length %></li>
+<% percent_strikes = (Strike.where("target_id = #{target.id}").length.to_f / @all_strikes) * 100 %>
+<li class="list-group-item"><%= link_to target.name, target_path(target) %> : <%= Strike.where(:target_id => target.id).all.length %>&nbsp:&nbsp<%= percent_strikes %>%</li>
 <% end %>
 </ul>

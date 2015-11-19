@@ -1,8 +1,10 @@
 class StrikesController < ApplicationController
   # index
   def index
-      @country = Country.find(params[:country_id])
+    @country = Country.find(params[:country_id])
     @strikes = Strike.where("country_id = #{params[:country_id]}")
+    @percent_strikes = (@strikes.length.to_f / Strike.all.length.to_f) * 100
+    @relations = Relation.where("country_id = #{params[:country_id]}")
   end
 
   # new

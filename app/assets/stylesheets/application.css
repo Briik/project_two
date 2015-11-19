@@ -61,13 +61,13 @@
 #middle_stripe{
     background-color: none;
     color: red;
-    border: 2px solid black;
+    border: 1px solid black;
 }
 #bottom_stripe{
 background-color: black;
 color: white;
 }
-.allies, .enemies{
+.allies, .enemies, .coordination{
     padding-left: 5em;
 }
 .allies{
