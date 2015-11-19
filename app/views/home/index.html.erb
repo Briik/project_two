@@ -55,9 +55,6 @@
         <%= "Airstrike on #{strike.area} at #{strike.time}"%>
         <% else %>
         <%= "Assault initiated at #{strike.time}." %><br>
-        <p class="edit">
-            <a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit"></a>
-        </p>
         <% end %>
         <p class="edit">
             <a href="/countries/<%= strike.country_id %>/strikes/<%= strike.id %>/edit"><h6>Is this information inaccurate? Edit this strike.</h6></a>
