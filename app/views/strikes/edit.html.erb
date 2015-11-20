@@ -1,6 +1,6 @@
 <h2>Edit Strike</h2>
 
-<form action="/countries/<%= @strike.country_id %>/strikes/<%= @strike.id %>" method="post">
+<form class="navbar-form pull-left" action="/countries/<%= @strike.country_id %>/strikes/<%= @strike.id %>" method="post">
     <input name="_method" type="hidden" value="put">
     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 

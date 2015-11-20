@@ -16,8 +16,8 @@
         <% end %></p>
 
     <h3><%= link_to 'Report a Strike', new_country_strike_path(@country) %></h3>
+<h4><%= "#{@country.name} has attacked the following groups: "%></h4>
     <ul>
-        <h4><%= "#{@country.name} has attacked the following groups: "%></h4>
         <% array = [] %>
         <% @strikes.each do |strike| %>
         <% array << Target.find(strike.target_id).name %>

@@ -11,5 +11,4 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 
 Rails.application.config.assets.precompile += %w( css/bootstrap.min.css )
-Rails.application.config.assets.precompile += %w( jquery.imagemapster.js )
-Rails.application.config.assets.precompile += %w( js/bootstrap.min.js )
+Rails.application.config.assets.precompile += %w( js/bootstrap.js )

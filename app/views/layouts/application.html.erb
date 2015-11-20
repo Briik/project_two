@@ -14,17 +14,21 @@
 </head>
 
 <body>
+    <!-- Nav Bar bootstrap formatting -->
     <div class="container">
         <div class="header clearfix">
             <nav>
+
                 <ul class="nav nav-pills pull-right">
                     <% if current_user %>
                     <li role="presentation" class="active"><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></li>
                     <% else %>
                     <li role="presentation" class="active"><%= link_to 'Signup', new_user_registration_path %></li>
                     <li role="presentation" class="active"><%= link_to 'Login', new_user_session_path %></li>
-                    <% end %>
+                <% end %>
                 </ul>
+
+
                 <ul class="nav nav-pills pull-right">
                     <li role="presentation">
                         <%= link_to 'Strikes', '/' %>
@@ -38,10 +42,10 @@
                     <li role="presentation">
                         <%= link_to 'Country-Militant Group Relationships', relations_path() %>
                     </li>
-                    <li role="presentation" class="disabled">
+                    <li role="presentation" class="active">
                         <%= notice %>
                     </li>
-                    <li role="presentation" class="disabled">
+                    <li role="presentation" class="active">
                         <%= alert %>
                     </li>
                 </ul>
@@ -62,7 +66,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <%= javascript_include_tag 'js/bootstrap.min.js' %>
+    <%= javascript_include_tag 'js/bootstrap.js' %>
 </body>
 
 </html>

@@ -2,12 +2,6 @@
 <h3>Strike list is user generated and is not guaranteed to be accurate or unbiased.
 </h3>
 
-<% if current_user == nil%>
-<script>
-    alert("Welcome to Syriapp. We are a compendium of user-generated data on the confict in Syria. Our compiled data is available to the public through this website's features. To generate or edit our content you must sign up. We place no constraints on members, but must track content generation to root out bad actors.  Thank you for your participation.")
-</script>
-<% end %>
-
 <div class="chart">
     <% i = 0 %>
     <% Country.all.each do |country| %>
@@ -23,9 +17,11 @@
     <% i += 1 %>
     <% end %>
 </div>
+
 <h5>>>To register a stike with Syriapp, first
     <%= link_to 'select the nation-state', countries_path() %>
     that launched the attack.</h5>
+
 <!-- List of Strikes -->
 <ul>
     <% @strikes.each do |strike| %>

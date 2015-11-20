@@ -4,7 +4,7 @@
     and
     <%= @target.name %></h5>
 
-<form action="/relations/<%= @relation.id %>" method="post">
+<form class="navbar-form pull-left" action="/relations/<%= @relation.id %>" method="post">
     <input name="_method" type="hidden" value="put">
     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
