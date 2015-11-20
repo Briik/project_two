@@ -1,7 +1,14 @@
+<% if current_user == nil %>
+<div class="jumbotron">
+<h2 class="text-muted">Welcome to Syriapp</h2>
+<p class="text-primary">Syriapp is a user-driven compendium of data on airstrikes and international relations for the Syrian Civil War. There is no other publicly accessible database of military acivity and relationships for this conflict. This site is not biased, and relies on its userbase to be accurate and thourough. If you would like to contribute to this site, please register.<p><a class="btn btn-primary btn-lg" href="/users/sign_in" role="button">Signup</a></p>
+</div>
+<% end %>
+
+
 <h2>Strikes</h2>
 <h3>Strike list is user generated and is not guaranteed to be accurate or unbiased.
 </h3>
-
 <div class="chart">
     <% i = 0 %>
     <% Country.all.each do |country| %>
