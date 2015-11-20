@@ -35,7 +35,7 @@
     </h4>
     <ul>
         <h5>Responsible for
-            <%= @percent_strikes %>% of Syriapp registered strikes.</h5>
+            <%= @percent_strikes.round(2) %>% of Syriapp registered strikes.</h5>
         <% @strikes.each do |strike| %>
         <li>
             On

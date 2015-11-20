@@ -7,8 +7,8 @@
     <% percent_strikes = (Strike.where("country_id = #{country.id}")).length.to_f / (Strike.all.length.to_f) * 100 %>
     <li class="list-group-item">
         <%= image_tag country.flag_link, alt: "National Flag of #{country.name}", class: "flag" %>&nbsp<%= link_to country.name, "/countries/#{country.id}/strikes" %>&nbsp:
-        <span class="coordination"><%= country.strikes.all.length %></span>&nbsp:&nbsp<%= percent_strikes %>%
-    </li>
+        <span class="coordination"><%= country.strikes.all.length %></span>&nbsp:<span class="pull-right"><%= percent_strikes.round(2) %>%
+    </span></li>
     <% end %>
 </ul>
 
