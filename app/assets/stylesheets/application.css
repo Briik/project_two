@@ -50,10 +50,15 @@
 }
 .chart div {
   font: 10px sans-serif;
-  text-align: right;
+  text-align: justify;
   padding: 3px;
   margin: 1px;
   color: white;
+}
+/*stripes*/
+#top_stripe, #middle_stripe, #bottom_stripe{
+    border-radius: 3px;
+    text-rendering: optimizeLegibility;
 }
 #top_stripe{
     background-color: green;
