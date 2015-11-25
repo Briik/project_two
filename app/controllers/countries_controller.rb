@@ -14,6 +14,7 @@ class CountriesController < ApplicationController
   def create
     @country = Country.create!(countries_params)
     redirect_to countries_path()
+    # It'd be "Railsy-er" to not include the (). But hey, Javascript4Lyfe
   end
 
   #show

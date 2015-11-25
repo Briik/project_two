@@ -15,11 +15,17 @@
     <% one_third = Country.all.length / 3 %>
     <% two_thirds = one_third * 2 %>
     <% if country.strikes.length != 0 %>
-    <div id="<% if i < one_third %><%='top_stripe'%><% end %><% if i >= one_third && i < two_thirds %><%='middle_stripe'%><% end %><% if i >= two_thirds %><%='bottom_stripe'%><% end %>" label="<%= country.name %>"
+    <!--
+    You almost never will have two clownhats without equals signs in a row.
+    If you do, it's an indication that you're putting too much "business logic" in your views.
+    That is: code that does something other than explicitly make something show up in your HTML.
+    That should instead go in your controllers, models, or helpers.
+  -->
+    <div id="<% if i < one_third %><%='top_stripe'%><% end %><%# "top_stripe" if i < one_third %><% if i >= one_third && i < two_thirds %><%='middle_stripe'%><% end %><% if i >= two_thirds %><%='bottom_stripe'%><% end %>" label="<%= country.name %>"
         style="width:<% if country.strikes.length < 100 %><%= country.strikes.length * 10 %><% else %><%= country.strikes.length %><% end %>px;"><%= country.strikes.length %>&nbsp:&nbsp<%= country.name %>
     </div>
     <% else %>
-    <%= %>
+    <%= # Wat. %>
     <% end %>
     <% i += 1 %>
     <% end %>
