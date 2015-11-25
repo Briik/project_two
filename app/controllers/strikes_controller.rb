@@ -20,7 +20,9 @@ class StrikesController < ApplicationController
   def create
     @country = Country.find(params[:country_id])
     @strike = Strike.create!(strikes_params.merge(country: @country))
+    # @strike = @country.create!(strikes_params)
     redirect_to country_strikes_path(params[:country_id])
+    # redirect_to country_strikes_path(@country)
   end
 
   #show
@@ -33,6 +35,7 @@ class StrikesController < ApplicationController
     @strike = Strike.find(params[:id])
     @strikes = Strike.all
     @targets = Target.all.sort_by{ |m| m.name.downcase }
+    # @targets = Target.all.order(:name)
   end
 
   # update

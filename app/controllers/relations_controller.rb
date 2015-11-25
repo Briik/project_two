@@ -34,7 +34,9 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
           @countries = Country.all
           @targets = Target.all
           @country = Country.find(@relation.country_id)
+          # @country = @relation.country
           @target = Target.find(@relation.target_id)
+          # @target = @relation.target
       end
 
       # update

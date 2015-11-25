@@ -20,6 +20,7 @@
 .full_flag{
     max-width: 324;
     max-height: 216;
+    /* These need to end in px. */
 }
 .foot-fixed-bottom {
  bottom: 0;
@@ -28,6 +29,7 @@
  margin-bottom: 0;
  position: fixed;
  right: 0;
+ /* Generally you use either left or right, and either top or bottom. Setting left: 0 and right: 0 is kinda contradictory. */
  z-index: 1030;
 }
 .foot-fixed-bottom .container {
@@ -41,6 +43,7 @@
  border-style: solid none;
  border-width: 1px 0;
  margin: 0 0 5px;
+ /* These properties should have one value (which applies to all sides), two values (top/bottom, and left/right), or four values (top, right, bottom, left), but not three! */
  width: 100%;
 }
 .foot-fixed-bottom p {
