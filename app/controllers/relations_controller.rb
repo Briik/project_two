@@ -3,11 +3,11 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
       # index
       def index
         @relationships = Relation.all
+        @countries = Country.all
         @country_names = []
-        Country.all.each do |country|
+        @countries.each do |country|
             @country_names << country.name
         end
-        @countries = Country.all
       end
 
       # new
